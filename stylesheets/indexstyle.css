@@ -1,0 +1,58 @@
+html {
+	background-image: url("../imgs/side.png");
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.blurb {
+	margin-left:15%;
+	margin-top: 12%;
+	margin-bottom: 3%;
+}
+
+
+nav ul{
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #3f3f3f;
+	border-radius: 3px;
+
+
+}
+
+nav li {
+	float:left;
+	
+}
+
+nav a {
+	display: block;
+    color: lightgray;
+    text-align: left;
+    text-decoration: none;
+    width:120px;
+    padding-top:5%;
+    padding-bottom: 5%;
+}
+
+nav a:hover {
+	color:white;
+}
+
+.icons {
+	display: inline;
+	margin-left: 15%;
+	margin-top:5%;
+}
+
+.icons div {
+	display: inline;
+	width:40px;
+	height: 40px;
+
+}
+
+.content {
+	width:40%;
+	display: block;
+}
