@@ -1,6 +1,7 @@
 nav {
 	position: fixed;
 	top:0px;
+	width:100%;
 }
 
 nav ul{
@@ -8,6 +9,7 @@ nav ul{
 	overflow: hidden;
 	background-color: #3f3f3f;
 	border-radius: 3px;
+	width:100%;
 
 
 }
