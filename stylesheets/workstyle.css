@@ -1,15 +1,10 @@
 .content {
   width:60%;
-  height:40;
-  margin-top:20%;
-  margin-left:20%;
-  padding:20%;
+  height:40%;
+  margin-top:15%;
+  margin-left:15%;
+  margin-right:15%;
+  padding:10%;
   background-color:gray;
   opacity:.5;
-}
-
-.background {
-  height:100%;
-  width:100%;
-  z-index:-1;
 }
