@@ -11,6 +11,7 @@
 	margin-bottom:5%;
 	padding:3%;
 	background-color: lightgray;
+	box-shadow: 3px 3px 20px #888888;
 }
 
 
@@ -18,6 +19,7 @@
 .postContent {
 	padding:3%;
 	background-color: lightgray;
+	box-shadow: 3px 3px 20px #888888;
 }
 
 .icons {
@@ -43,5 +45,6 @@
 	height:100%;
 	-webkit-filter:blur(10px);
 	filter:blur(10px);
+	opacity: .7;
 }
 
