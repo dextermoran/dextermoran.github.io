@@ -4,7 +4,7 @@
   height:60%;
   margin-top:10%;
   margin-left:15%;
-  padding:5%;
+  padding:3%;
   background-color:gray;
   opacity:.8;
 }
@@ -17,6 +17,7 @@
 .content p {
 	padding-bottom: 5%;
 	line-height: 180%;
+	width:80%;
 }
 
 .background {
