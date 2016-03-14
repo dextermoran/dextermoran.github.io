@@ -47,6 +47,7 @@
 	display: block;
 	background-color:lightgray;
 	padding:2%;
+	margin-bottom:5%;
 	
 }
 
@@ -55,7 +56,7 @@ input {
 	padding:2%;
 	margin:2%;
 	border-radius:1%;
-	width:40%;
+	width:60%;
 }
 
 textarea {
@@ -63,5 +64,5 @@ textarea {
 	padding:2%;
 	margin:2%;
 	border-radius:1%;	
-	width:40%;
+	width:60%;
 }
