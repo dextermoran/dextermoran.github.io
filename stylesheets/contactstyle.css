@@ -15,7 +15,7 @@
 }
 
 .content p {
-	padding-bottom: 10%;
+	padding-bottom: 5%;
 	line-height: 180%;
 }
 
@@ -33,6 +33,7 @@
 	display: inline;
 	margin-left: 80%;
 	margin-top:90%;
+	padding-top:5%;
 	opacity: 0.7;
 }
 
@@ -54,6 +55,7 @@ input {
 	padding:2%;
 	margin:2%;
 	border-radius:1%;
+	width:40%;
 }
 
 textarea {
@@ -61,4 +63,5 @@ textarea {
 	padding:2%;
 	margin:2%;
 	border-radius:1%;	
+	width:40%;
 }
