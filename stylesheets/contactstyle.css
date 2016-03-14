@@ -41,3 +41,24 @@
 	width:40px;
 	height: 40px;
 }
+
+.emailme {
+	display: block;
+	background-color:lightgray;
+	padding:2%;
+	
+}
+
+input {
+	display:block;
+	padding:2%;
+	margin:2%;
+	border-radius:1%;
+}
+
+textarea {
+	display:block;
+	padding:2%;
+	margin:2%;
+	border-radius:1%;	
+}
