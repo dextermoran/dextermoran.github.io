@@ -7,7 +7,7 @@ nav {
 nav ul{
 	list-style-type: none;
 	overflow: hidden;
-	background-color: #3f3f3f;
+	background-color: #333333;
 	border-radius: 3px;
 	width:100%;
 
@@ -15,17 +15,18 @@ nav ul{
 
 nav li {
 	float:left;
+	font-size: 1.2em;
 	
 }
 
 nav a {
 	display: block;
-    color: lightgray;
+    color: #e5e5e5;
     text-align: left;
     text-decoration: none;
     width:180px;
-    padding-top:3%;
-    padding-bottom: 3%;
+    padding-top:4%;
+    padding-bottom: 4%;
 }
 
 nav a:hover {
@@ -34,10 +35,10 @@ nav a:hover {
 
 #logo {
 	position:fixed;
-	top:-19px;
+	top:-32px;
 	right:5%;
 	margin-top: 0px;
-	color:gray;
+	color:#d3d3d3;
 	clear:right;
 	float:right;
 }

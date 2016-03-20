@@ -1,25 +1,29 @@
 .content {
 	width:60%;
 	margin-left:20%;
-
+	margin-top:10%;
 }
 
 .postTitle {
 	display:block;
-	float:rightS;
-	margin-top:10%;
-	margin-bottom:5%;
-	padding:3%;
-	background-color: lightgray;
-	box-shadow: 3px 3px 20px #888888;
+	margin-top:8%;
+	margin-bottom:1%;
+	padding-top:1%;
+	padding-bottom: 1%;
+	padding-left:3%;
+	
+	background-color: #e3e3e3;
+	color:#333333;
+	
 }
 
 
 
 .postContent {
 	padding:3%;
-	background-color: lightgray;
-	box-shadow: 3px 3px 20px #888888;
+	background-color: #e3e3e3;
+	color:#333333;
+
 }
 
 .icons {
