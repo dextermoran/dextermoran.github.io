@@ -21,7 +21,65 @@
     </nav>
 
   <div class="content">
-    
+     <div class="postTitle">
+        <h3>Ruby Classes! </h3> 
+           <!-- <section class="icons">
+              <div><img src="../imgs/email-black.png"></div>
+              <div><img src="../imgs/googleplus-black.png"></div>
+              <div><img src="../imgs/linkedin-black.png"></div>
+              <div><img src="../imgs/instagram-black.png"></div>
+            </section> -->
+      </div>
+
+      <div class="postContent">
+        <p> The easiest way to think about classes in ruby to view them as blueprints. 
+        Say you wanted to build several similar houses. You could build each house individually, 
+        figuring out each room as you went. This would be tedious and would require you to address 
+        the same challenges for each house. A better way to go about building these homes would be 
+        to draw up a blueprint first, so that you could simply follow the drawings and only have to
+        go through the planning stages once. With some careful planning one could even draw up these
+        plans in a way that allowed for some variation between the homes, they could be built to  suit 
+        their individual plot of land or the colors of the walls could be changed. Lets look at an example: 
+        </p>
+        
+        <p>
+        
+class SuburbanHouse<br>
+
+	def initialize(sq_footage, color)<br>
+		@sq_footage = sq_footage<br>
+		@color = color<br>
+	end<br>
+<br>
+	def customization(boolean) <br>
+		If true<br>
+			@kitchen = “A+”<br>
+			@Basement =  “super cool tv room”<br>
+		Else<br>
+			@Kitchen = “B-”<br>
+			@Basement = “unfinished”<br>
+		end <br>
+	end <br>
+<br>
+	def real_estate_pitch<br>
+		puts “ look at this beautiful #{@sq_footage} square foot home! Its painted #{@color} in literally every room and has a #{@kitchen} and #{@basement}!”<br>
+	end <br>
+End<br>
+<br>
+house1 = SuburbanHouse.new(2000, “purple”<br>
+house1.customization(true)<br>
+House1.real_estate_pitch<br>
+<br>
+=> look at this beautiful 200 square foot home! Its painted purple in literally every room and has a A+ kitchen and super cool tv room! <br>
+</p>
+<p>
+This is a class definition for a suburban home It lets one define a ruby object 
+as a home and assign it several properties of its own very easily. As you can see, 
+it uses instance variable so that the data stored is available to every method of the class.
+Every SuburbanHouse object created will have access to those methods, regardless of what parameters 
+they are constructed with. 
+ </p>
+     </div>
     
       <div class="postTitle">
         <h3>The Cycle method!</h3> 
