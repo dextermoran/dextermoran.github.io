@@ -1,10 +1,39 @@
 .content {
-  width:60%;
-  height:40%;
-  margin-top:15%;
-  margin-left:15%;
-  margin-right:15%;
-  padding:10%;
-  background-color:gray;
-  opacity:.5;
+  position: absolute;
+  margin-top:10%;
+  left:10%;
+  right:10%;
+  background-color: #d3d3d3;
+  z-index: -1;
+
+}
+
+.row1 {
+  position: relative;
+  display:inline-block;
+  height:100%;
+  width:100%;
+  left:4%;
+  right:5%;
+}
+
+
+.projectThumbnail{
+  background-color: #333333;
+  display: inline-block;
+  height:250px;
+  width:250px;
+  margin:2%;
+}
+
+#muji {
+  background-image: url(../imgs/muji/withsticker.49.jpg);
+  background-size: cover;
+
+}
+
+#bike {
+  background-image: url(../imgs/bike/bikeandgtr3.jpg);
+  background-size:cover;
+  background-position: center;
 }

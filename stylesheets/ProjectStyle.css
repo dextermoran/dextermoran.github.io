@@ -1,0 +1,41 @@
+.container {
+  position: absolute;
+  margin-top: 10%;
+  right:30%;
+  left:10%;
+  width:60%;
+  background-color: #d3d3d3;
+  
+}
+
+
+.images {
+  margin:2%;
+  max-height: 96%;
+  max-width: 96%;
+}
+
+.blurb {
+  position: absolute;
+  left:70%;
+  right:10%;
+  width:18%;
+  margin-top: 10%;
+  background-color: #d3d3d3;
+  color: #333333;
+  margin-left:2%;
+  padding:2%;
+}
+
+.backToTop{
+  width:100%;
+  background-color: #333333;
+  margin-bottom: 2%;
+}
+
+.backToTop h3 {
+  color:#e5e5e5;
+  z-index: 2;
+  text-align: center;
+  padding:2%;
+}

@@ -1,14 +1,17 @@
 nav {
 	position: fixed;
-	top:0px;
+	top:-20px;
+	left:0px;
+	right:0px;
 	width:100%;
+	z-index: 5;
 }
 
 nav ul{
 	list-style-type: none;
 	overflow: hidden;
 	background-color: #333333;
-	border-radius: 3px;
+	border-radius: 0px;
 	width:100%;
 
 }
@@ -34,11 +37,7 @@ nav a:hover {
 }
 
 #logo {
-	position:fixed;
-	top:-32px;
-	right:5%;
-	margin-top: 0px;
+	text-align: left;
 	color:#d3d3d3;
-	clear:right;
 	float:right;
 }
