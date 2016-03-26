@@ -1,0 +1,219 @@
+<!--
+	
+
+What was the most difficult part of this challenge?
+
+	I had some free time this week and went a little overboard with this challenge. 3d graphics are something i am really 
+	interested in and I used this challenge as an opportunity to get my feet wet with them. I had a lot of fun doing so and 
+	was able to google my way out pretty much where ever i got stuck. I did spend a fair amount of time trying to import a
+	model of a bunny for the player object but wasn't successful in doing so in less that 25 minutes and moved on. 
+
+What did you learn about creating objects and functions that interact with one another?
+
+	A whole lot. I know that i went off the reservation a little bit of this one but i feel that as a result i learn an absolute ton.
+	I spent a long time before i even started coding just looking through documentation so i knew what was possible and what wasnt.
+
+Did you learn about any new built-in methods you could use in your refactored solution? If so, what were they and how do they work?
+
+	I learned about a hundred new methods, most of which deal with event listeners or positioning objects.
+
+How can you access and manipulate properties of objects?
+
+var demoObject = {propertyOne:"red"}
+demoObject.propertyOne = "blue";
+console.log(demoObject.propertyOne) //=> blue
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Easter Egg Game</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	  <link rel="stylesheet" type="text/css" href="../stylesheets/game.css"
+
+	</head>
+	<body>
+
+		<div id="score">0</div>
+		<div id="bestScore">best: 0</div>
+		<a href="work.html"><p id="back">Back</p></p></a>
+		
+		<div id="container">
+			<h2>Get the Giant Egg!</h2>
+			<button>Difficulty</button>
+			<button onclick="settingsControl(1)">Easy</button>
+			<button onclick="settingsControl(2)">Medium</button>
+			<button onclick="settingsControl(3)">Hard</button>
+			<br>
+			<button>Speed</button>
+			<button onclick="speedControl(1)">Slow</button>
+			<button onclick="speedControl(2)">Medium</button>
+			<button onclick="speedControl(3)">Fast</button>
+			<br>
+			<button id="startButton" onclick="startGame()">Start!</button>
+		</div>
+  
+		<script src="../js/three.min.js"></script>
+
+		<script>
+		
+		function settingsControl(num) {
+			console.log("difficulty set");
+      settings.difficulty = num * 4;
+			console.log("difficulty set", settings.difficulty);
+			return sphereRadius = settings.difficulty
+		};
+		
+		function speedControl(num) {
+			settings.speed = num * 1.5;
+			return enemySpeed = settings.speed;
+		}
+		
+		function startGame() {
+			document.getElementById("container").style.display = 'none';
+			init();
+			animate();
+		}
+		
+			var settings = {
+				difficulty: 1,
+				speed: 2
+			}
+
+		
+			var sphereRadius = settings.difficulty
+			var camera, scene, renderer, player, gem;
+			var mesh;
+			var enemies = [];
+      var enemySpeed = settings.speed;
+      var mouse = new THREE.Vector2();
+			var gemRange = 500;
+			var scoreDiv = document.getElementById( "score" );
+			var bestScoreDiv = document.getElementById( "bestScore" );
+			
+			
+
+
+
+			function init() {
+
+				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
+				camera.position.z = 400;
+
+				scene = new THREE.Scene();
+
+				var texture = new THREE.TextureLoader().load( '../imgs/peep.jpg' );
+
+				var geometry = new THREE.SphereGeometry( sphereRadius );
+				var material = new THREE.MeshBasicMaterial( { map: texture } );
+				var eggGeometry = new THREE.SphereGeometry(sphereRadius * 2);
+
+        var radius = 2000;
+        var nBoxes = 200;
+
+        
+        for(var i =0; i<nBoxes; i++){
+				  mesh = new THREE.Mesh( geometry, material );
+				  scene.add( mesh );
+				  mesh.position.set(radius/2 - radius * Math.random(),
+				                    radius/2 - radius * Math.random(),
+				                    0.0);
+				 enemies.push(mesh); 
+        }
+        
+    
+
+        
+				player = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial() );
+				player.material.color.setHex( 0xff6699 );
+				scene.add( player );
+
+				document.body.addEventListener( 'mousemove', onMouseMove, false );
+				
+				
+					var eggTexture = new THREE.TextureLoader().load( '../imgs/eggPattern.jpg' );
+				
+				gem = new THREE.Mesh( eggGeometry, new THREE.MeshBasicMaterial( {map: eggTexture} ) );
+				gem.position.set( gemRange/2 - gemRange * Math.random(),
+        								  gemRange/2 - gemRange * Math.random(),
+        								  0.0);
+				scene.add( gem );
+
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+				renderer.setClearColor( 0x99ff99, 1);
+				
+
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+			
+			function onMouseMove( event ) {
+
+				mouse.x = ( ( event.clientX - document.body.offsetLeft ) / document.body.clientWidth ) * 2 - 1;
+				mouse.y = - ( ( event.clientY - document.body.offsetTop ) / document.body.clientHeight ) * 2 + 1;
+
+				player.position.set( 275 * mouse.x, 275 * mouse.y, 0.0 );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				
+				for(var i =0; i<enemies.length; i++){
+					enemies[i].rotation.x += (Math.random() * .1 + .00005);
+			   	enemies[i].rotation.y += (Math.random() * .1 + .00005);
+			   	
+			   	if(enemies[i].position.y < -500){
+			   	  enemies[i].position.y = 500;
+			   	} else {
+			   	    if (enemies[i].position.distanceTo( player.position ) < 2 * sphereRadius){
+			   	      scoreDiv.innerHTML = "0";
+			   	    }
+			   	enemies[i].position.y -= enemySpeed;
+			   	}
+			   	
+				}
+				
+			
+
+
+				// check for player-gem collision
+				if ( player.position.distanceTo( gem.position ) < 2 * sphereRadius ) {
+					gem.position.x = gemRange/2 - gemRange * Math.random();// give the gem a random xy coord
+					gem.position.y = gemRange/2 - gemRange * Math.random();
+
+					var score = Number(scoreDiv.innerHTML) + 1; // increase score
+					scoreDiv.innerHTML = score.toString();
+
+					var best = bestScoreDiv.innerHTML.split(' ');
+					if ( score > Number( best[1] ) ) {
+						bestScoreDiv.innerHTML = best[0] + " " + score.toString();
+					}
+				}
+
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+
+	</body>
+</html>

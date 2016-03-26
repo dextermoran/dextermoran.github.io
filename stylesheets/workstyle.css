@@ -37,3 +37,9 @@
   background-size:cover;
   background-position: center;
 }
+
+#game{
+  background-image: url(../imgs/eggPattern.jpg);
+  background-size:cover;
+  background-position: center;
+}
