@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Cheat Sheet </title> 
+ <meta charset="UTF-8">
+ <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+ <link rel="stylesheet" type="text/css" href="../stylesheets/ProjectStyle.css">
+ <link rel="stylesheet" type="text/css" href="../stylesheets/nav.css">
+
+</head>
+  <body>
+
+    <nav>
+      <ul>
+        <li><a href ="about.html">About</a></li>
+        <li><a href ="blog.html">Blog</a></li>
+        <li><a href ="contact.html">Contact</a></li>
+        <li><a href ="work.html">Work</a></li>
+        <li id="logo"><a href="../index.html">Dexter Moran</a></li>
+      </ul>
+    </nav>
+
+
+    <section class="container">
+      
+      <p>Objects are cool! this is how you initilize one:</p>
+      <code>var obj = {}</code>
+      <p>If you wanted to initilize one already with a few properties it might look like this: </p>
+      <code> var car = {make: "chevy", model: implala} </code>
+      <p>You could access any of those values by calling something like this: </p>
+      <code>console.log(car.make)</code>
+      <p>if you wanted to get really crazy you could even iterate through all the properties in an object.</p>
+      <code>for (var x in car) { console.log(x) } </code>
+      <p>If you wanted, you could git your object functions! </p>
+      <code>car.rev = function() {console.log("vroom vroom"} </code>
+      <p>One method i have found particularly useful is the has own property method, which returns a boolean based on wether or not an object contains a property.</p>
+      <code>car.hasOwnProperty(make) #=> true </code>
+      <p>Or maybe you want to merge a couple of objects. This could be done like this:</p>
+      <code>var boat = {} </code>
+      <code>var train = {} </code>
+      <code> var vehicles = {} </code>
+      <code>Object.assign(vehicles, train, boat, car) </code>
+      
+      <p>For anything more in depth than i covered, look <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"> here!</a></p>
+      
+      
+      
+      
+      <a href="work.html"><div class="backToTop"><h3>More Projects</h3></div></a>
+    
+    </section>
+    
+    <div class="blurb">
+      <h3>JS Cheat Sheet</h3>
+      <p>Some times we all forget the little things. This is a handy little reference for those times.</p>
+    </div>
+
+
+
+
+
+  </body>
+</html>

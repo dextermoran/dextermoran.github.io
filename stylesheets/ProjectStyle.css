@@ -39,3 +39,14 @@
   text-align: center;
   padding:2%;
 }
+
+.container p {
+  margin-left: 2%;
+  margin-top:5%;
+}
+
+code {
+  margin-left:4%;
+  background-color: #f2f2f2;
+  padding: 1%;
+}
