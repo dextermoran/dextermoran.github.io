@@ -29,16 +29,6 @@
 	display: block;
 }
 
-.background {
-	background: url(../imgs/side_2.png);
-	background-size: cover;
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
-	width:110%;
-	height:50%;
-}
 
 .below {
 	height:800px;
@@ -48,5 +38,9 @@
 
 }
 
-
-
+#threeD {
+	position: absolute;
+	z-index: -1;
+	height: 100%;
+	width:100%;
+}

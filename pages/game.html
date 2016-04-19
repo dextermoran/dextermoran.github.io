@@ -1,12 +1,12 @@
 <!--
-	
+
 
 What was the most difficult part of this challenge?
 
-	I had some free time this week and went a little overboard with this challenge. 3d graphics are something i am really 
-	interested in and I used this challenge as an opportunity to get my feet wet with them. I had a lot of fun doing so and 
+	I had some free time this week and went a little overboard with this challenge. 3d graphics are something i am really
+	interested in and I used this challenge as an opportunity to get my feet wet with them. I had a lot of fun doing so and
 	was able to google my way out pretty much where ever i got stuck. I did spend a fair amount of time trying to import a
-	model of a bunny for the player object but wasn't successful in doing so in less that 25 minutes and moved on. 
+	model of a bunny for the player object but wasn't successful in doing so in less that 25 minutes and moved on.
 
 What did you learn about creating objects and functions that interact with one another?
 
@@ -39,7 +39,7 @@ console.log(demoObject.propertyOne) //=> blue
 		<div id="score">0</div>
 		<div id="bestScore">best: 0</div>
 		<a href="work.html"><p id="back">Back</p></p></a>
-		
+
 		<div id="container">
 			<h2>Get the Giant Egg!</h2>
 			<button>Difficulty</button>
@@ -54,35 +54,35 @@ console.log(demoObject.propertyOne) //=> blue
 			<br>
 			<button id="startButton" onclick="startGame()">Start!</button>
 		</div>
-  
+
 		<script src="../js/three.min.js"></script>
 
 		<script>
-		
+
 		function settingsControl(num) {
 			console.log("difficulty set");
       settings.difficulty = num * 4;
 			console.log("difficulty set", settings.difficulty);
 			return sphereRadius = settings.difficulty
 		};
-		
+
 		function speedControl(num) {
 			settings.speed = num * 1.5;
 			return enemySpeed = settings.speed;
 		}
-		
+
 		function startGame() {
 			document.getElementById("container").style.display = 'none';
 			init();
 			animate();
 		}
-		
+
 			var settings = {
 				difficulty: 1,
 				speed: 2
 			}
 
-		
+
 			var sphereRadius = settings.difficulty
 			var camera, scene, renderer, player, gem;
 			var mesh;
@@ -92,8 +92,8 @@ console.log(demoObject.propertyOne) //=> blue
 			var gemRange = 500;
 			var scoreDiv = document.getElementById( "score" );
 			var bestScoreDiv = document.getElementById( "bestScore" );
-			
-			
+
+
 
 
 
@@ -113,28 +113,28 @@ console.log(demoObject.propertyOne) //=> blue
         var radius = 2000;
         var nBoxes = 200;
 
-        
+
         for(var i =0; i<nBoxes; i++){
 				  mesh = new THREE.Mesh( geometry, material );
 				  scene.add( mesh );
 				  mesh.position.set(radius/2 - radius * Math.random(),
 				                    radius/2 - radius * Math.random(),
 				                    0.0);
-				 enemies.push(mesh); 
+				 enemies.push(mesh);
         }
-        
-    
 
-        
+
+
+
 				player = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial() );
 				player.material.color.setHex( 0xff6699 );
 				scene.add( player );
 
 				document.body.addEventListener( 'mousemove', onMouseMove, false );
-				
-				
+
+
 					var eggTexture = new THREE.TextureLoader().load( '../imgs/eggPattern.jpg' );
-				
+
 				gem = new THREE.Mesh( eggGeometry, new THREE.MeshBasicMaterial( {map: eggTexture} ) );
 				gem.position.set( gemRange/2 - gemRange * Math.random(),
         								  gemRange/2 - gemRange * Math.random(),
@@ -147,13 +147,13 @@ console.log(demoObject.propertyOne) //=> blue
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
 				renderer.setClearColor( 0x99ff99, 1);
-				
+
 
 
 				window.addEventListener( 'resize', onWindowResize, false );
 
 			}
-			
+
 			function onMouseMove( event ) {
 
 				mouse.x = ( ( event.clientX - document.body.offsetLeft ) / document.body.clientWidth ) * 2 - 1;
@@ -175,11 +175,11 @@ console.log(demoObject.propertyOne) //=> blue
 			function animate() {
 
 				requestAnimationFrame( animate );
-				
+
 				for(var i =0; i<enemies.length; i++){
 					enemies[i].rotation.x += (Math.random() * .1 + .00005);
 			   	enemies[i].rotation.y += (Math.random() * .1 + .00005);
-			   	
+
 			   	if(enemies[i].position.y < -500){
 			   	  enemies[i].position.y = 500;
 			   	} else {
@@ -188,10 +188,10 @@ console.log(demoObject.propertyOne) //=> blue
 			   	    }
 			   	enemies[i].position.y -= enemySpeed;
 			   	}
-			   	
+
 				}
-				
-			
+
+
 
 
 				// check for player-gem collision
